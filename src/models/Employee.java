@@ -84,14 +84,4 @@ public class Employee {
             throw new RuntimeException("Not valid date!");
         }
     }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "employeeId=" + employeeId +
-                ", projectId=" + projectId +
-                ", dateFrom='" + dateFrom + '\'' +
-                ", dateTo='" + dateTo + '\'' +
-                '}';
-    }
 }

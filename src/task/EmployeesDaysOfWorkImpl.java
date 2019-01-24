@@ -19,6 +19,7 @@ public class EmployeesDaysOfWorkImpl implements EmployeesDaysOfWork {
 
     private ReadFileImpl file;
     private List<Employee> employees;
+    private long bestDays = 0;
 
     public EmployeesDaysOfWorkImpl() {
         file = new ReadFileImpl();
@@ -45,16 +46,17 @@ public class EmployeesDaysOfWorkImpl implements EmployeesDaysOfWork {
             return;
         }
 
-        System.out.println("First employee is " +
-                coupleEmployee.get(FIRST_USER) +
-                " and second is " +
-                coupleEmployee.get(SECOND_USER));
+        System.out.println("The couple of employees is with id " +
+                coupleEmployee.get(FIRST_USER).getEmployeeId() +
+                " and " + coupleEmployee.get(SECOND_USER).getEmployeeId() +
+                " with project id " +
+                coupleEmployee.get(FIRST_USER).getProjectId() +
+                " and " + bestDays + " days of work together!");
     }
 
     @Override
     public List<Employee> coupleEmployee(List<Employee> employees)
             throws ParseException {
-        long bestDays = 0;
         List<Employee> result = new ArrayList<>();
 
         for (int i = 0; i < employees.size(); i++) {
